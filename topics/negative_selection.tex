@@ -1,6 +1,16 @@
 \section{Negative Selection Algorithm}
 
-\begin{frame}{Biological immune system}
+\begin{frame}
+\begin{center}
+\begin{spacing}{2.0}
+ \Huge {Negative Selection Algorithm}
+ \large {\\Li, Meizhen}
+\end{spacing}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Inspiration-Biological immune system}
   \begin{itemize}
   \item {
     The antigen-antibody reaction is an exclusive process.
@@ -20,7 +30,7 @@
 \begin{frame}{Biological immune system}
   \begin{figure}[hb]
   \centering
-  \includegraphics[width=0.6\textwidth]{NSA/figures/NST.JPG}
+  \includegraphics[width=0.6\textwidth]{img/NST.JPG}
   \caption{Negative selection of T cells}
   \end{figure}
 \end{frame}
@@ -28,7 +38,7 @@
 \begin{frame}{Biological immune system}
   \begin{figure}[hb]
   \centering
-  \includegraphics[width=0.6\textwidth]{NSA/figures/is.jpg}
+  \includegraphics[width=0.6\textwidth]{img/ag_ab.jpg}
   \caption{Antigen-antibody interaction}
   \end{figure}
 \end{frame}
@@ -46,16 +56,37 @@
   }
   % You can also specify when the content should appear
   % by using <n->:
-  
   \end{itemize}
 \end{frame}
  
 \begin{frame}{Flowchart}
   \begin{figure}[hb]
   \centering
-  \includegraphics[width=0.8\textwidth]{NSA/figures/flowchart1.jpg}
+  \includegraphics[width=0.8\textwidth]{img/NSAflowchart1.jpg}
   \caption{Generation of effective detector}
   \end{figure}
+\end{frame}
+
+\begin{frame}{Pseudocode}
+ \begin{algorithm}[H]
+  \caption{Detector Generation}          
+  \label{alg1}      % and a label for \ref{} commands later in the document
+    \begin{algorithmic}  
+       \STATE Input:SelfData
+       \STATE Output:Repertoire
+       \STATE Repertoire $\Leftarrow$ emptyset
+       \WHILE {$ !StopCondition()$}
+       \STATE Detectors $\Leftarrow$ GenerateRandomDetectors()
+       \FOR {Detector[i] $\in$ Repertoire }
+       \IF {$not$ Matches(Detector[i],SelfData)}
+       \STATE Repertoire $\Leftarrow$ Detector[i]
+       \ENDIF
+       \ENDFOR
+       \ENDWHILE
+       \STATE Return (Repertiore)
+
+    \end{algorithmic}
+  \end{algorithm} 
 \end{frame}
 
 \begin{frame}{Defining the NSA}
@@ -69,7 +100,26 @@
 \begin{frame}{Flowchart}
   \begin{figure}[hb]
   \centering
-  \includegraphics[width=0.8\textwidth]{NSA/figures/flowchart2.jpg}
-  \caption{Self-monitoring}
+  \includegraphics[width=0.8\textwidth]{img/NSAflowchart2.jpg}
+  \caption{Detector application}
   \end{figure}
+\end{frame}
+
+\begin{frame}{Pseudocode}
+ \begin{algorithm}[H]
+  \caption{Detector Monitering}          
+  \label{alg2}      
+    \begin{algorithmic}  
+       \STATE Input:InputSamples,Repertoire
+  
+       \FOR {Input[i] $\in$ InputSamples}
+       \STATE Inputiclass $\Leftarrow$ nonself  
+       \FOR {Detector[j] $\in$ Repertoire }
+       \IF {Matches(Detector[j],SelfData)}
+       \STATE Inputiclass $\Leftarrow$ self
+       \ENDIF
+       \ENDFOR
+       \ENDFOR            
+    \end{algorithmic}
+  \end{algorithm} 
 \end{frame}
