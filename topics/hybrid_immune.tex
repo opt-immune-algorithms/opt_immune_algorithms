@@ -1,9 +1,8 @@
-
 \section{Hybrid Immune Algorithm}
 
 \begin{frame}
-\Huge \textbf{Hybrid Immune Algorithm}
-\large {Han,Shiqi}
+\centering \Huge \textbf{Hybrid Immune Algorithm} \\~\\
+\large \centering{Han,Shiqi}
 \end{frame}
 
 \begin{frame}{Why Hybrid?}
@@ -17,20 +16,19 @@
 \end{frame}
 
 \begin{frame}{Hybrid Ways}
-\begin{columns}[c] 
-\column{.45\textwidth} 
+
 \begin{itemize}
 \item {Operator Transplantation}
 \item {Operator Series}
 \item {Operator Competition}
-\end{itemize}
-\column{.55\textwidth} 
-\includegraphics[height=3cm]{img/hybrid_immune.jpg}
-\end{columns}
+\end{itemize} 
+\begin{center}
+\includegraphics[height=4cm]{img/hybrid_immune.jpg}
+\end{center}
 \end{frame}
 
 \begin{frame}{Hybrid Immune Algorithm}
-\begin{itemize}
+\begin{itemize}\large{
 \item{Immune Genetic Algorithm}
 \item{Immune Particle Swarm Optimization}
 \item{Synergetic Evolutionary Immune Algorithm}
@@ -41,7 +39,7 @@ Chaotic Immune Algorithm\\
 Fuzzy Immune System\\
 Immune Neural Network Algorithm\\
 ......
-}
+}}
 \end{itemize}
 \small
 {\noindent
@@ -50,8 +48,8 @@ Immune Neural Network Algorithm\\
 \end{frame}
 
 \begin{frame}{Immune Ant Colony Algorithm}{Ant Colony Algorithm}
- \large \textbf{Ant Colony Algorithm}\\~\\
- \small
+ \huge \textbf{Ant Colony Algorithm}\\~\\
+ \large
  {
 Ants leave a \textcolor{red}{pheromone} in the path that it travels when foraging, and can feel the intensity of it during the movement and tend to move in the direction of \textcolor{red}{high concentration}, so the  group behavior will show \textcolor{red}{positive feedback} with pheromone information.
  }\\
@@ -119,7 +117,7 @@ p{_{ij}}^{k} =
 \end{frame}
 
 \begin{frame}{Immune Ant Colony Algorithm}{Algorithms Step}
-\large \textbf{Step 1} \normalsize{Calculate a feasible solution using immune algorithm}\\~\\
+\large \textbf{Step1 Calculate a feasible solution using immune algorithm}\\~\\
 \begin{itemize}
 \item{Enter question and determine the antibody encoding}
 \item{Calculate antibody affinity $f_{dist}$, Memory cell $M(f_{dist}\geqslant\theta)$}
@@ -136,7 +134,7 @@ con_i=\frac{M_{bi}}{M_{b}} }
 \end{frame}
 
 \begin{frame}{Immune Ant Colony Algorithm}{Algorithms Step}
-\large \textbf{Step 2} \normalsize {Initialize the pheromone based on feasible solution}\\~\\
+\large \textbf{Step2 Initialize the pheromone based on feasible solution}\\~\\
 \begin{equation}
 \tau_{ij}(0)=
 \begin{cases}
@@ -153,7 +151,7 @@ con_i=\frac{M_{bi}}{M_{b}} }
 \end{frame}
 
 \begin{frame}{Immune Ant Colony Algorithm}{Algorithms Step}
-\large \textbf{Step 3} \normalsize {Construct probability formula using immune inhibition operators}\\~\\
+\large \textbf{Step3 Construct probability formula using immune inhibition operators}\\~\\
 \centering \small { \textcolor{red}{Path Concentration $C_{ij}$:} the amount of ants that choose path $e_{ij}$}
 \begin{equation}\small{
 C_{ij}(t) = \frac{1}{M} \sum\limits_{k=1}^{M}iif \left(e_{ij} \in Tour^k(t),1,0\right)}
@@ -164,7 +162,7 @@ C_{ij}^k(t) = \frac{1}{M} \sum\limits_{k=1}^{k-1}iif \left(e_{ij} \in Tour^k(t),
 \end{frame}
 
 \begin{frame}{Immune Ant Colony Algorithm}{Algorithms Step}
-\large \textbf{Step 3} \normalsize {Construct probability formula using immune inhibition operators}\\~\\
+\large \textbf{Step3 Construct probability formula using immune inhibition operators}\\~\\
 \centering \small {Update pheromone amount $\tau_{ij}$ considering path concentration $c_{ij}$}
 \begin{equation}
 \tau_{ij}^k(t)=
@@ -183,7 +181,7 @@ p{_{ij}}^{k} =
 \end{frame}
 
 \begin{frame}{Immune Ant Colony Algorithm}{Algorithms Step}
-\large \textbf{Step 4} \normalsize {Update pheromones}\\~\\
+\large \textbf{Step4 Update pheromones}\\~\\
 \begin{equation} \small{
 \tau_{ij}(t+n) = (1-\omega)\cdot\tau_{ij}(t)+\omega\cdot C}
 \end{equation} \\~\\
@@ -202,7 +200,7 @@ p{_{ij}}^{k} =
 \end{frame}
 
 \begin{frame}{Summary}
-\textbf{Two tyeps of Hybrid Immune Algorithms} \\~\\
+\large \textbf{Two tyeps of Hybrid Immune Algorithms} \\~\\
 \begin{itemize}
 \item{Introduce the immune concept and mechanism into other algorithms, overcome local extreme points and improve convergence accuracy}
 \item{Introduce other algorithms into immune algorithm, increase the convergence speed of algorithm}
