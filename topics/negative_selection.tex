@@ -123,3 +123,99 @@
     \end{algorithmic}
   \end{algorithm} 
 \end{frame}
+
+\begin{frame}{Mathematical description}
+ \begin{algorithm}[H]
+  \caption{Define parameters}          
+ % \label{alg3}      
+    \begin{algorithmic}  
+       \STATE N$_{R_0}$:number of initial detectors
+       \STATE N$_{R}$:number of mature detectors 
+       \STATE N$_{S}$:number of self elements (length=l)
+       \STATE P$_{M}$:random match probability at specific condition
+       \STATE P$_{f}$:failed match probability
+       \STATE f:the possibility of a random string not matching Selfset
+    \end{algorithmic}
+  \end{algorithm} 
+\end{frame}
+
+\begin{frame}{Mathematical description}
+  \begin{equation}
+     P_{Detectors}: f=(1-P_{M})^{N_{S}}
+  \end{equation}
+  \begin{equation}
+     FailedMatch:P_f=(1-P_{M})^{N_{R}}
+  \end{equation}
+  \begin{equation}
+     Detector:N_R=\frac{lnP_f}{ln(1-P_M)}
+  \end{equation}
+  \begin{equation}
+     Iterations:D=\frac{lnP_f}{(1-P_{M})^{N_{S}}ln(1-P_M)}
+  \end{equation}
+  
+\end{frame}
+
+\begin{frame}{Optimization-detector generation}
+   \begin{itemize}
+      \item {
+    Linear time detector generating algorithm
+      \begin{equation}
+        TimeComplexity=O((l-r)\times{N_S})+O((l-r)\times{2^r})+O(l\times{N_R})
+      \end{equation}
+    }
+      \item {
+    Greedy detector generating algorithm
+     \begin{equation}
+        TimeComplexity=O((l-r)\times{N_S})+O((l-r)\times{2^r}\times{N_R})+O(l\times{N_R})
+     \end{equation}
+    }
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Optimization-detection}
+  \begin{itemize}
+  \item{
+     Detection time complexity has linear corelation with N$_R$\\
+  \begin{equation}
+     Detector:N_R=\frac{lnP_f}{ln(1-P_M)}
+  \end{equation}  
+  \begin{equation}
+     P_Mcontinous \approx \frac{1}{2^r}[\frac{l-r}{2}+1]
+  \end{equation}
+  \begin{equation}
+     P_Mcontinous = \frac{1}{2^r}\sum_{i=r}^{n}C_l^i
+  \end{equation}
+ }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Optimization-detection}
+  \begin{itemize}
+  \item{
+     Detection time complexity has linear corelation with N$_R$\\
+  \begin{equation}
+     Detector:N_R=\frac{lnP_f}{ln(1-P_M)}
+  \end{equation}  
+  \begin{equation}
+     P_Mcontinous \approx \frac{1}{2^r}[\frac{l-r}{2}+1]
+  \end{equation}
+  \begin{equation}
+     P_Mcontinous = \frac{1}{2^r}\sum_{i=r}^{n}C_l^i
+  \end{equation}
+ }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Optimization-black hole}
+  \begin{figure}[hb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/blackhole.jpg}
+  \caption{Definition of black hole}
+  \end{figure}
+\end{frame}
+
+
+
+
+
