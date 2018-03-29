@@ -131,7 +131,7 @@
     \begin{algorithmic}  
        \STATE N$_{R_0}$:number of initial detectors
        \STATE N$_{R}$:number of mature detectors 
-       \STATE N$_{S}$:number of self elements (length=l)
+       \STATE N$_{S}$:number of self elements
        \STATE P$_{M}$:random match probability at specific condition
        \STATE P$_{f}$:failed match probability
        \STATE f:the possibility of a random string not matching Selfset
@@ -173,7 +173,7 @@
 \end{frame}
 
 
-\begin{frame}{Optimization-detection}
+\begin{frame}{Optimization-detection time complexity}
   \begin{itemize}
   \item{
      Detection time complexity has linear corelation with N$_R$\\
@@ -184,30 +184,22 @@
      P_Mcontinous \approx \frac{1}{2^r}[\frac{l-r}{2}+1]
   \end{equation}
   \begin{equation}
-     P_Mcontinous = \frac{1}{2^r}\sum_{i=r}^{n}C_l^i
+     P_Mhamming = \frac{1}{2^r}\sum_{i=r}^{n}C_l^i
   \end{equation}
  }
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Optimization-detection}
-  \begin{itemize}
-  \item{
-     Detection time complexity has linear corelation with N$_R$\\
-  \begin{equation}
-     Detector:N_R=\frac{lnP_f}{ln(1-P_M)}
-  \end{equation}  
-  \begin{equation}
-     P_Mcontinous \approx \frac{1}{2^r}[\frac{l-r}{2}+1]
-  \end{equation}
-  \begin{equation}
-     P_Mcontinous = \frac{1}{2^r}\sum_{i=r}^{n}C_l^i
-  \end{equation}
- }
-  \end{itemize}
+\begin{frame}{Optimization-detection time complexity}
+  
+  \begin{figure}[hb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/CompareCH.jpg}
+  \caption{With a specified r,P$_{Mcontinous}$ $\textless$ P$_{Mhamming}$,N$_{Rcontinous}$ $\textgreater$ N$_{Rhamming}$}
+  \end{figure}
 \end{frame}
 
-\begin{frame}{Optimization-black hole}
+\begin{frame}{Define black hole}
   \begin{figure}[hb]
   \centering
   \includegraphics[width=0.6\textwidth]{img/blackhole.jpg}
@@ -215,7 +207,40 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}{Reduce black hole}
+   \begin{algorithm}[H]
+   \caption{r-adjustable negative selection algorithm}          
+ % \label{alg3}      
+    \begin{algorithmic}  
+       \STATE Step1: Define SelfSet S (length=l) r$_1$,r$_2$,...,r$_c$
+       \STATE Step2: a $\Leftarrow$ GenerateRandomString (length=l) r=r$_1$
+       \STATE Step3: Matches (a,S[i])
+       \IF {$not$ Matches(a,S[i])}
+       \STATE go to step2
+       \ELSIF {r \textgreater r$_c$}
+       \STATE go to step2
+       \ELSE
+       \STATE r=r$_{++}$ 
+       \STATE go to step3
+       \ENDIF 
+       
+    \end{algorithmic}
+  \end{algorithm} 
+\end{frame}
 
+\begin{frame}{Reduce black hole}
+  \begin{figure}[hb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/reducedblackhole.jpg}
+  \caption{the number of blackhole and iteration to generate mature detector have reduced}
+  \end{figure}
+\end{frame}
 
-
-
+\begin{frame}
+\begin{center}
+\begin{spacing}{2.0}
+ \Huge {Thanks}
+ \large {\\Li, Meizhen}
+\end{spacing}
+\end{center}
+\end{frame}
